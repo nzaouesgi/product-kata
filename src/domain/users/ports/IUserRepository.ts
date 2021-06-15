@@ -1,4 +1,4 @@
-import { User } from './User'
+import { User } from '../User'
 import Optional from 'optional-js'
 
 export interface IUserRepository {

@@ -1,10 +1,10 @@
 import { ProductViewUseCase } from '../src/use-cases/ProductViewUseCase'
-import { IProductRepository } from '../src/domain/products/IProductRepository'
+import { IProductRepository } from '../src/domain/products/ports/IProductRepository'
 import { ProductRepositoryMemory } from "../src/infrastructure/adapters/ProductRepositoryMemory"
 import { OrderRepositoryMemory } from "../src/infrastructure/adapters/OrderRepositoryMemory"
 import { UserRepositoryMemory } from "../src/infrastructure/adapters/UserRepositoryMemory"
-import { IUserRepository } from '../src/domain/users/IUserRepository'
-import { IOrderRepository } from '../src/domain/orders/IOrderRepository'
+import { IUserRepository } from '../src/domain/users/ports/IUserRepository'
+import { IOrderRepository } from '../src/domain/orders/ports/IOrderRepository'
 import { Product } from '../src/domain/products/Product'
 import Chance from 'chance'
 import { Order } from '../src/domain/orders/Order'

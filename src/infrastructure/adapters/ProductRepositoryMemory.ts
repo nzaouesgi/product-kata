@@ -1,5 +1,5 @@
 import { Product } from '../../domain/products/Product';
-import { IProductRepository } from '../../domain/products/IProductRepository';
+import { IProductRepository } from '../../domain/products/ports/IProductRepository';
 import { range } from '../../utils'
 import faker from 'faker'
 import Optional from 'optional-js'

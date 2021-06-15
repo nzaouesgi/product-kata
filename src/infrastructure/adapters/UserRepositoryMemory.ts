@@ -1,9 +1,8 @@
 import { User } from '../../domain/users/User';
-import { IUserRepository } from '../../domain/users/IUserRepository';
+import { IUserRepository } from '../../domain/users/ports/IUserRepository';
 import { range } from '../../utils'
 import faker from 'faker'
 import Optional from 'optional-js'
-import moment from 'moment'
 
 export class UserRepositoryMemory implements IUserRepository {
     private readonly users: User[]

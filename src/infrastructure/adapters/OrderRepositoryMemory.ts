@@ -1,4 +1,4 @@
-import { IOrderRepository } from '../../domain/orders/IOrderRepository'
+import { IOrderRepository } from '../../domain/orders/ports/IOrderRepository'
 import moment from 'moment'
 import { Order } from '../../domain/orders/Order'
 

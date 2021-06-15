@@ -1,15 +1,14 @@
-import { IOrderRepository } from '../domain/orders/IOrderRepository'
-import { IProductRepository } from '../domain/products/IProductRepository'
+import { IOrderRepository } from '../domain/orders/ports/IOrderRepository'
+import { IProductRepository } from '../domain/products/ports/IProductRepository'
 import { Product } from '../domain/products/Product'
-import { IUserRepository } from '../domain/users/IUserRepository'
-import { IUseCase } from './IUseCase'
+import { IUserRepository } from '../domain/users/ports/IUserRepository'
 import moment from 'moment'
 import { Order } from '../domain/orders/Order'
 
 export class ProductNotFoundException extends Error {}
 export class UserNotFoundException extends Error {}
 
-export class ProductViewUseCase implements IUseCase {
+export class ProductViewUseCase {
 
     public constructor(
         private readonly productsRepository: IProductRepository,
@@ -34,7 +33,7 @@ export class ProductViewUseCase implements IUseCase {
         const discounts: [number, (orders: Order[]) => boolean][] = [
             [
                 -0.1,
-                (orders) => orders
+                orders => orders
                     .filter(
                         order =>
                             order.date >= moment().subtract(moment.duration(6, 'months')).toDate() &&
@@ -44,7 +43,7 @@ export class ProductViewUseCase implements IUseCase {
             ],
             [
                 0.05,
-                (orders) => orders
+                orders => orders
                     .filter(
                         order =>
                             order.date >= moment().subtract(moment.duration(1, 'year')).toDate() &&

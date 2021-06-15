@@ -12,6 +12,7 @@ export class ProductController {
     ) {}
 
     private printProduct(product: ProductDto) {
+        
         let page = `${chalk.bold.cyan(product.name)}\n` +
             `${chalk.grey(product.category)}\n` +
             `${chalk.bold.green(product.price)}€\n\n` +
